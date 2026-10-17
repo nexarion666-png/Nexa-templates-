@@ -16,7 +16,7 @@ import type {PreviewConfig,ResolvedPreview} from '@/lib/preview';
  *   2. Register it below. Use next/dynamic so the demo is NOT bundled into the catalogue pages:
  *        import dynamic from 'next/dynamic';
  *        'orbit-saas': dynamic(() => import('./orbit-saas')),
- *   3. In lib/products.ts set the product's  preview: { mode: 'integrated', integratedId: 'orbit-saas' }
+ *   3. Register it under the SAME KEY AS THE TEMPLATE'S SLUG, then set preview_mode = 'integrated' on that row in Supabase.
  */
 export const integratedPreviews: Record<string, ComponentType> = {
   // (none registered yet — no template source code exists in this repository)

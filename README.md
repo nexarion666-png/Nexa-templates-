@@ -7,7 +7,11 @@ A colorful, visual-first marketplace storefront starter built with Next.js 14, T
 - Individual product detail pages
 - About, contact, and draft licensing pages
 - Mobile navigation and responsive styling
+- Database-backed catalogue (Supabase PostgreSQL) — see `DATABASE-SETUP.md`
 - Live preview system (`/demo/[slug]`) with Desktop/Tablet/Mobile switcher, full screen and external demo support — see `PREVIEW-SYSTEM.md`
+
+## Catalogue database (Stage 4)
+Templates are read from the Supabase `templates` table (published rows only). Setup in short: run `supabase/migrations/0001_template_catalogue.sql`, then `supabase/seed.sql`, set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` (locally in `.env.local`, in production in Vercel → Settings → Environment Variables), and redeploy. Full guide, security model, how to add templates and configure previews: **`DATABASE-SETUP.md`**. Not yet implemented: admin dashboard, accounts, cart, payments, downloads.
 
 ## Important: this is the storefront foundation, not a live shop yet
 Payments, customer accounts, admin uploads, persistent cart, database integration, and secure paid downloads are not implemented. Product prices and preview art are demonstration content. Do not accept real payments until payment verification, order storage, license terms, and private download delivery are implemented and tested.

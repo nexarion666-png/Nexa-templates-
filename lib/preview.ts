@@ -4,7 +4,8 @@
  * This file is intentionally framework-free (no React, no Next imports) so it can be
  * used from server components, client components and plain Node tests.
  *
- * HOW TO CONFIGURE A TEMPLATE (in lib/products.ts, on the product's `preview` field):
+ * HOW A TEMPLATE'S PREVIEW IS CONFIGURED (Stage 4: columns preview_mode / preview_url / preview_embeddable in the
+ * Supabase `templates` table are mapped to this shape by lib/catalogue/mapper.ts; lib/products.ts is only the legacy fallback):
  *
  *   preview: { mode: 'unavailable' }                       // default — no demo yet
  *   preview: { mode: 'external', url: 'https://demo.example.com' }

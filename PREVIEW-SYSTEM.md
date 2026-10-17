@@ -12,7 +12,7 @@
 **All six are set to `unavailable`.** The uploaded repository contains no template source code and no demo URLs (only the illustrative `PreviewArt` cards), so there is nothing real to preview yet. As soon as you set one of them to `external` or `integrated`, its button becomes **Preview Live** automatically.
 
 ## Turning a preview on
-In `lib/products.ts`, edit the product's `preview` field:
+**Since Stage 4 previews are configured in the Supabase `templates` table** (`preview_mode`, `preview_url`, `preview_embeddable` — see `DATABASE-SETUP.md`). The snippets below show the equivalent legacy `preview` shape in `lib/products.ts`, which is now only the opt-in fallback catalogue.
 
 ```ts
 // 1. Separately deployed demo (recommended for full Next.js / Vite / HTML templates)

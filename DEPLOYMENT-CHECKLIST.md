@@ -12,3 +12,6 @@
 - [ ] Complete an end-to-end sandbox purchase before launch.
 - [ ] Configure a real demo URL (or integrated demo) for each template in `lib/products.ts` and test `/demo/<slug>` on Android, tablet and desktop. Products without one show "Preview coming soon".
 - [ ] Confirm external demos allow iframe embedding (no `X-Frame-Options: DENY`), or set `embeddable:false`.
+- [ ] Run `supabase/migrations/0001_template_catalogue.sql`, then `supabase/seed.sql`, in the Supabase SQL editor; verify RLS with the check in `DATABASE-SETUP.md`.
+- [ ] Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in Vercel and redeploy. Never set the service-role key as a `NEXT_PUBLIC_` variable.
+- [ ] Verify each seeded price and description before selling; seeded rows are illustrative.
