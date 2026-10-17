@@ -96,7 +96,7 @@ export async function getTemplateCategories():Promise<string[]>{
     if(typeof c==='string'&&c.trim())found.add(c.trim());
   }
   const known=CATEGORY_PRIORITY.filter(c=>found.has(c));
-  const extra=[...found].filter(c=>!CATEGORY_PRIORITY.includes(c)).sort((a,b)=>a.localeCompare(b));
+  const extra=Array.from(found).filter(c=>!CATEGORY_PRIORITY.includes(c)).sort((a,b)=>a.localeCompare(b));
   return [...known,...extra];
 }
 

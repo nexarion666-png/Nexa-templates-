@@ -22,9 +22,11 @@ export function normalizeCategory(input:unknown):string|null{
  * Search terms are reduced to letters, digits, spaces and a few harmless symbols so they can never
  * alter the structure of the PostgREST filter (no commas, parentheses, wildcards or quotes).
  */
+// Built from a string: the project's tsconfig targets es5, which rejects /u regex literals at type-check time.
+const UNSAFE_SEARCH_CHARS=new RegExp('[^\\p{L}\\p{N} \\-.+#]','gu');
 export function normalizeSearchTerm(input:unknown):string{
   if(typeof input!=='string')return '';
-  return input.normalize('NFKC').replace(/[^\p{L}\p{N} \-.+#]/gu,' ').replace(/\s+/g,' ').trim().slice(0,80);
+  return input.normalize('NFKC').replace(UNSAFE_SEARCH_CHARS,' ').replace(/\s+/g,' ').trim().slice(0,80);
 }
 
 export function normalizeSort(input:unknown):SortKey{
