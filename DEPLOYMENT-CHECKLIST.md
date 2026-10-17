@@ -1,0 +1,12 @@
+# Pre-launch checklist
+- [ ] Replace sample products with original template products and accurate listing details.
+- [ ] Add and test real downloadable ZIP files.
+- [ ] Finalize license, privacy, terms, refund, and support policies.
+- [ ] Implement protected admin access server-side.
+- [ ] Configure database and least-privilege security policies.
+- [ ] Integrate a payment provider that supports the business and target markets.
+- [ ] Verify payment events server-side before marking an order paid.
+- [ ] Keep paid ZIPs in private storage, not the public folder.
+- [ ] Check ownership before generating short-lived download links.
+- [ ] Test mobile layout, search, checkout webhooks, and downloads.
+- [ ] Complete an end-to-end sandbox purchase before launch.
