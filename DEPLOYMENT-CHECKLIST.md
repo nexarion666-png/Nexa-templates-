@@ -10,3 +10,5 @@
 - [ ] Check ownership before generating short-lived download links.
 - [ ] Test mobile layout, search, checkout webhooks, and downloads.
 - [ ] Complete an end-to-end sandbox purchase before launch.
+- [ ] Configure a real demo URL (or integrated demo) for each template in `lib/products.ts` and test `/demo/<slug>` on Android, tablet and desktop. Products without one show "Preview coming soon".
+- [ ] Confirm external demos allow iframe embedding (no `X-Frame-Options: DENY`), or set `embeddable:false`.

@@ -7,6 +7,7 @@ A colorful, visual-first marketplace storefront starter built with Next.js 14, T
 - Individual product detail pages
 - About, contact, and draft licensing pages
 - Mobile navigation and responsive styling
+- Live preview system (`/demo/[slug]`) with Desktop/Tablet/Mobile switcher, full screen and external demo support — see `PREVIEW-SYSTEM.md`
 
 ## Important: this is the storefront foundation, not a live shop yet
 Payments, customer accounts, admin uploads, persistent cart, database integration, and secure paid downloads are not implemented. Product prices and preview art are demonstration content. Do not accept real payments until payment verification, order storage, license terms, and private download delivery are implemented and tested.
