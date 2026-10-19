@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Check } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
 import { DownloadButton } from '@/components/download-button';
+import { BuyButton } from '@/components/buy-button';
 
 export const revalidate = 60;
 
@@ -47,7 +48,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
 
           <div id="purchase" className="mt-6 scroll-mt-24">
-            <DownloadButton slug={p.slug} />
+            <BuyButton slug={p.slug} price={Number(p.price)} />
+            <div className="mt-3">
+              <DownloadButton slug={p.slug} />
+            </div>
           </div>
           <p className="mt-3 text-center text-xs text-gray-400">Secure download - only available after purchase.</p>
 
