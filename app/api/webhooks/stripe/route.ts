@@ -11,17 +11,14 @@ export const dynamic = 'force-dynamic';
  *   Event        : checkout.session.completed
  */
 
-async function findUserIdByEmail(
-  admin: ReturnType<typeof createClient>,
-  email: string
-): Promise<string | null> {
+async function findUserIdByEmail(admin: any, email: string): Promise<string | null> {
   const target = email.trim().toLowerCase();
   const perPage = 200;
   for (let page = 1; page <= 50; page++) {
     const { data, error } = await admin.auth.admin.listUsers({ page, perPage });
     if (error) throw new Error(error.message);
     const users = data?.users ?? [];
-    const match = users.find((u) => (u.email || '').toLowerCase() === target);
+    const match = users.find((u: any) => (u.email || '').toLowerCase() === target);
     if (match) return match.id;
     if (users.length < perPage) break;
   }
