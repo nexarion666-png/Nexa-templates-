@@ -1,0 +1,17 @@
+# Pre-launch checklist
+- [ ] Replace sample products with original template products and accurate listing details.
+- [ ] Add and test real downloadable ZIP files.
+- [ ] Finalize license, privacy, terms, refund, and support policies.
+- [ ] Implement protected admin access server-side.
+- [ ] Configure database and least-privilege security policies.
+- [ ] Integrate a payment provider that supports the business and target markets.
+- [ ] Verify payment events server-side before marking an order paid.
+- [ ] Keep paid ZIPs in private storage, not the public folder.
+- [ ] Check ownership before generating short-lived download links.
+- [ ] Test mobile layout, search, checkout webhooks, and downloads.
+- [ ] Complete an end-to-end sandbox purchase before launch.
+- [ ] Configure a real demo URL (or integrated demo) for each template in `lib/products.ts` and test `/demo/<slug>` on Android, tablet and desktop. Products without one show "Preview coming soon".
+- [ ] Confirm external demos allow iframe embedding (no `X-Frame-Options: DENY`), or set `embeddable:false`.
+- [ ] Run `supabase/migrations/0001_template_catalogue.sql`, then `supabase/seed.sql`, in the Supabase SQL editor; verify RLS with the check in `DATABASE-SETUP.md`.
+- [ ] Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in Vercel and redeploy. Never set the service-role key as a `NEXT_PUBLIC_` variable.
+- [ ] Verify each seeded price and description before selling; seeded rows are illustrative.
