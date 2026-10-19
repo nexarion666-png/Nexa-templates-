@@ -16,13 +16,9 @@ export function DownloadButton({ slug }: { slug: string }) {
       );
       const { data, error } = await supabase.rpc('get_download_url', { p_slug: slug });
       if (error) throw new Error(error.message);
-      
-      // data is the storage path like 'my-template.zip'
-      // Create a signed URL via storage
       const { data: urlData } = await supabase.storage
         .from('template-zips')
         .createSignedUrl(data as string, 60);
-      
       if (urlData?.signedUrl) window.location.href = urlData.signedUrl;
       else throw new Error('Could not create download link');
     } catch (e: any) {
